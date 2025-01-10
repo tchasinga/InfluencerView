@@ -2,7 +2,138 @@
   "hash": "67ed9951",
   "configHash": "6c4ef32c",
   "lockfileHash": "9f676c58",
-  "browserHash": "94ef7035",
-  "optimized": {},
-  "chunks": {}
+  "browserHash": "ed5b6991",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "a75cb0b3",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "652f8ee1",
+      "needsInterop": true
+    },
+    "react-redux": {
+      "src": "../../node_modules/react-redux/dist/react-redux.mjs",
+      "file": "react-redux.js",
+      "fileHash": "bdd381e0",
+      "needsInterop": false
+    },
+    "redux-persist/integration/react": {
+      "src": "../../node_modules/redux-persist/es/integration/react.js",
+      "file": "redux-persist_integration_react.js",
+      "fileHash": "2544deb4",
+      "needsInterop": false
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "1a0cebd9",
+      "needsInterop": false
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "c580efae",
+      "needsInterop": true
+    },
+    "@reduxjs/toolkit": {
+      "src": "../../node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs",
+      "file": "@reduxjs_toolkit.js",
+      "fileHash": "acbefad7",
+      "needsInterop": false
+    },
+    "redux-persist": {
+      "src": "../../node_modules/redux-persist/es/index.js",
+      "file": "redux-persist.js",
+      "fileHash": "68d9490d",
+      "needsInterop": false
+    },
+    "redux-persist/lib/storage": {
+      "src": "../../node_modules/redux-persist/lib/storage/index.js",
+      "file": "redux-persist_lib_storage.js",
+      "fileHash": "dd7c465d",
+      "needsInterop": true
+    },
+    "redux-persist/es/persistStore.js": {
+      "src": "../../node_modules/redux-persist/es/persistStore.js",
+      "file": "redux-persist_es_persistStore__js.js",
+      "fileHash": "0313966c",
+      "needsInterop": false
+    },
+    "@mui/material": {
+      "src": "../../node_modules/@mui/material/index.js",
+      "file": "@mui_material.js",
+      "fileHash": "fa68af2f",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "62d9736b",
+      "needsInterop": false
+    },
+    "@mui/material/TextField": {
+      "src": "../../node_modules/@mui/material/TextField/index.js",
+      "file": "@mui_material_TextField.js",
+      "fileHash": "9604f78d",
+      "needsInterop": false
+    },
+    "firebase/storage": {
+      "src": "../../node_modules/firebase/storage/dist/esm/index.esm.js",
+      "file": "firebase_storage.js",
+      "fileHash": "410169ee",
+      "needsInterop": false
+    },
+    "@mui/material/CircularProgress": {
+      "src": "../../node_modules/@mui/material/CircularProgress/index.js",
+      "file": "@mui_material_CircularProgress.js",
+      "fileHash": "6c79ff6e",
+      "needsInterop": false
+    },
+    "ldrs": {
+      "src": "../../node_modules/ldrs/dist/index.js",
+      "file": "ldrs.js",
+      "fileHash": "3aba5719",
+      "needsInterop": false
+    },
+    "firebase/app": {
+      "src": "../../node_modules/firebase/app/dist/esm/index.esm.js",
+      "file": "firebase_app.js",
+      "fileHash": "7497e0df",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-C7P224Q4": {
+      "file": "chunk-C7P224Q4.js"
+    },
+    "chunk-QILWJMPM": {
+      "file": "chunk-QILWJMPM.js"
+    },
+    "chunk-MBT3EELI": {
+      "file": "chunk-MBT3EELI.js"
+    },
+    "chunk-HJCUEOHH": {
+      "file": "chunk-HJCUEOHH.js"
+    },
+    "chunk-XFRRJUFR": {
+      "file": "chunk-XFRRJUFR.js"
+    },
+    "chunk-IBHE2N4E": {
+      "file": "chunk-IBHE2N4E.js"
+    },
+    "chunk-JUWM2LYA": {
+      "file": "chunk-JUWM2LYA.js"
+    },
+    "chunk-W4EHDCLL": {
+      "file": "chunk-W4EHDCLL.js"
+    },
+    "chunk-EWTE5DHJ": {
+      "file": "chunk-EWTE5DHJ.js"
+    }
+  }
 }
