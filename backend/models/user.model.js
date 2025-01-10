@@ -20,7 +20,8 @@ const userSchema = new mongoose.Schema(
       required: true,
     },
     userprofile: {
-      type: "https://imgs.search.brave.com/fF4DH9KVHeM_hqgjNV8wlH6pitxTOcZC1nGUY0uVMTw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA5LzE1LzQ2Lzc0/LzM2MF9GXzkxNTQ2/NzQ2NF9TcEY4dUxL/NGJ3c3ZxMTJ2V01u/NjU4QnVyaFBsTTYx/Wi5qcGc",
+      type: String,
+      default: "https://imgs.search.brave.com/fF4DH9KVHeM_hqgjNV8wlH6pitxTOcZC1nGUY0uVMTw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA5LzE1LzQ2Lzc0/LzM2MF9GXzkxNTQ2/NzQ2NF9TcEY4dUxL/NGJ3c3ZxMTJ2V01u/NjU4QnVyaFBsTTYx/Wi5qcGc",
     }
   },
   {
