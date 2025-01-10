@@ -39,7 +39,7 @@ export default function SignIn() {
     try {
       dispatch(signInStart());
 
-      const res = await fetch(`http://localhost:8000/apis/auth/signin`, {
+      const res = await fetch(`https://influencerview.onrender.com/apis/auth/signin`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -24,7 +24,7 @@ export default function Home() {
     const fetchingSharing = async () => {
       try {
         setLoading(true);
-        const res = await fetch('http://localhost:8000/apis/aply/get');
+        const res = await fetch('https://influencerview.onrender.com/apis/aply/get');
         const data = await res.json();
         
         // Access the 'data' property inside the API response and set it to the state

@@ -24,7 +24,7 @@ const Detailspages: React.FC = () => {
   useEffect(() => {
     const fetchDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/apis/aply/getbyid/${sharingId}`);
+        const response = await axios.get(`https://influencerview.onrender.com/apis/aply/getbyid/${sharingId}`);
         if (response.data.success) {
           setDetails(response.data.data);
         } else {

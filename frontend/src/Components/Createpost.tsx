@@ -106,7 +106,7 @@ export default function Createpost() {
     setError(false);
 
     try {
-      const res = await fetch("http://localhost:8000/apis/aply/create", {
+      const res = await fetch("https://influencerview.onrender.com/apis/aply/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

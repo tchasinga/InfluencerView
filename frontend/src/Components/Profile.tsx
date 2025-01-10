@@ -12,7 +12,7 @@ export default function Profile() {
   const handleSignOut = async () => {
     try {
       dispatch(signOutUserStart());
-      const res = await fetch('http://localhost:8000/apis/auth/logout');
+      const res = await fetch('https://influencerview.onrender.com/apis/auth/logout');
       const data = await res.json();
 
       if (data.success === false) {
