@@ -7,6 +7,8 @@ import SignIn from './Components/SignIn.tsx'
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import PrivateRoom from './pages/PrivateRoom.tsx'
 import Detailspages from './Components/Detailspages.tsx'
+import Header from './Components/Header.tsx'
+
 
 
 function App() {
