@@ -50,10 +50,6 @@ export default function Detailspages() {
     }, 2000);
   }
 
-  const handleContactButtonClick = () => {
-    setContact(true);
-  }
-
   return (
     <main className="">
       {loading && (
@@ -112,11 +108,7 @@ export default function Detailspages() {
           <div className="text-slate-950 font-light text-xl">
             <h1>{sharing.description}</h1>
             </div>
-        <button
-          onClick={handleContactButtonClick}
-          className='bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 p-3 w-1/2'>
-         Get in touch
-        </button>
+
         {/* Addign condition rending in the page */}
         
           </div>
