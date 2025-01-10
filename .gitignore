@@ -24,3 +24,5 @@ Thumbs.db
 
 # Optional: Other generated files or folders
 coverage/
+
+.vite/deps
