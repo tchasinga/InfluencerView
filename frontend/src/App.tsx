@@ -8,6 +8,7 @@ import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import PrivateRoom from './pages/PrivateRoom.tsx'
 import Detailspages from './Components/Detailspages.tsx'
 import Header from './Components/Header.tsx'
+import Profile from './Components/Profile.tsx'
 
 
 
@@ -28,9 +29,12 @@ function App() {
             path="/dashboard"
             element={currentUser ? <Dashboard /> : <Navigate to="/signin" />}
           />
+          <Route path="/Mydetails/:id" element={<Detailspages />} />
+          <Route path="*" element={<Navigate to="/" />} />
 
           <Route element={<PrivateRoom />} />
           <Route path="/Mydetails/:id" element={<Detailspages />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </div>
