@@ -41,54 +41,32 @@ const Detailspages: React.FC = () => {
   }, [sharingId]);
 
   if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen text-lg text-gray-500">
-        Loading...
-      </div>
-    );
+    return <div className="loading">Loading...</div>;
   }
 
   if (error) {
-    return (
-      <div className="flex items-center justify-center min-h-screen text-lg text-red-500">
-        Error: {error}
-      </div>
-    );
+    return <div className="error">Error: {error}</div>;
   }
 
   if (!details) {
-    return (
-      <div className="flex items-center justify-center min-h-screen text-lg text-gray-500">
-        No details available.
-      </div>
-    );
+    return <div className="no-data">No details available.</div>;
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">Details Page</h1>
-      <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-        <div className="flex flex-col md:flex-row items-center p-6 space-x-6">
-          <div className="flex-shrink-0">
-            <img 
-              src={details.imageUrls[0]} 
-              alt={details.fullName} 
-              className="w-40 h-40 rounded-full object-cover shadow-md"
-            />
-          </div>
-          <div className="mt-4 md:mt-0">
-            <h2 className="text-2xl font-semibold text-gray-800">{details.fullName}</h2>
-            <p className="text-lg text-gray-600">{details.email}</p>
-            <p className="mt-4 text-gray-700">{details.description}</p>
-            <p className="mt-4 font-medium text-gray-800">
-              <span className="font-semibold">Type of Services:</span> {details.typeofservices}
-            </p>
-            <div className="mt-4 text-sm text-gray-500">
-              <p><strong>Created At:</strong> {new Date(details.createdAt).toLocaleString()}</p>
-              <p><strong>Updated At:</strong> {new Date(details.updatedAt).toLocaleString()}</p>
-            </div>
-          </div>
-        </div>
+    <div className="details-page container mx-auto p-4">
+      <h1 className="text-4xl font-bold mb-8 text-center">Details Page</h1>
+      <div className="details-card bg-white shadow-md rounded-lg p-6">
+        <img 
+          src={details.imageUrls[0]} 
+          alt={details.fullName} 
+          className="details-image w-full h-[500px] object-center rounded-md mb-4" 
+        />
+        <h2 className="text-2xl font-semibold mb-2">{details.fullName}</h2>
+        <p className="text-gray-700 mb-2"><strong>Email:</strong> {details.email}</p>
+        <p className="text-gray-700 mb-2"><strong>Description:</strong> {details.description}</p>
+        <p className="text-gray-700 mb-2"><strong>Type of Services:</strong> {details.typeofservices}</p>
+        <p className="text-gray-700 mb-2"><strong>Created At:</strong> {new Date(details.createdAt).toLocaleString()}</p>
+        <p className="text-gray-700"><strong>Updated At:</strong> {new Date(details.updatedAt).toLocaleString()}</p>
       </div>
     </div>
   );

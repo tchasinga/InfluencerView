@@ -12,9 +12,11 @@ export default function Header() {
 
   return (
     <div className='max-w-screen-xl mx-auto px-4 sm:px-6 flex items-center justify-between py-4 '>
+      <Link to="/">
       <div className="text-2xl font-bold">
         Influencer <span className="text-blue-500">View</span>
       </div>
+      </Link>
 
        {/* adding profile image */}
        <div className="flex items-center cursor-pointer">
