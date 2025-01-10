@@ -20,7 +20,7 @@ export default function Header() {
         {
           currentUser ?
             <Link to="/profile">
-                <img src={currentUser.photoURL} alt="Profile" className="w-10 h-10 rounded-full" />
+                <img src={currentUser.user.userprofile} alt="Profile" className="w-10 h-10 rounded-full" />
             </Link>
             :
             <div>

@@ -15,8 +15,9 @@ interface RootState {
   };
 }
 
-export default function SignIn() {
+export default function SingUp() {
   interface FormData {
+    username?: string;
     email?: string;
     password?: string;
   }
@@ -39,7 +40,7 @@ export default function SignIn() {
     try {
       dispatch(signInStart());
 
-      const res = await fetch(`http://localhost:8000/apis/auth/signin`, {
+      const res = await fetch(`http://localhost:8000/apis/auth/singup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -79,6 +80,20 @@ export default function SignIn() {
           Sign in as admin
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+
+          {/* adding the username field */}
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            id="username"
+            label="Username"
+            name="username"
+            autoComplete="username"
+            autoFocus
+            onChange={handleChange}
+          />
+
           <TextField
             margin="normal"
             required
@@ -90,6 +105,7 @@ export default function SignIn() {
             autoFocus
             onChange={handleChange}
           />
+          
           <TextField
             margin="normal"
             required

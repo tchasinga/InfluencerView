@@ -9,6 +9,7 @@ import PrivateRoom from './pages/PrivateRoom.tsx'
 import Detailspages from './Components/Detailspages.tsx'
 import Header from './Components/Header.tsx'
 import Profile from './Components/Profile.tsx'
+import SingUp from './Components/SingUp.tsx'
 
 
 
@@ -25,6 +26,8 @@ function App() {
         <Routes>
           <Route path="/signin" element={<SignIn />} />
           <Route path="/" element={<Home />} />
+          {/* add singup route */}
+          <Route path="/signup" element={<SingUp />} />
           <Route
             path="/dashboard"
             element={currentUser ? <Dashboard /> : <Navigate to="/signin" />}
