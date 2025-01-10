@@ -33,12 +33,12 @@ function App() {
             path="/dashboard"
             element={currentUser ? <Dashboard /> : <Navigate to="/signin" />}
           />
-          <Route path="/Mydetails/:id" element={<Detailspages />} />
+          <Route path="/Mydetails/:sharingId" element={<Detailspages />} />
           <Route path="*" element={<Navigate to="/" />} />
 
 
           <Route element={<PrivateRoom />} />
-          <Route path="/Mydetails/:id" element={<Detailspages />} />
+          <Route path="/Mydetails/:sharingId" element={<Detailspages />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/createpost" element={<Createpost />} />
         </Routes>

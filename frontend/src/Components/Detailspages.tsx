@@ -1,142 +1,97 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import Load from "../Animations/Load.tsx";
-import Messagebugs from "../Animations/Messagebugs.tsx";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css/bundle";
-import SwiperCore from "swiper";
-import { format } from 'date-fns';
-import { FaShare, FaRegCalendarAlt } from 'react-icons/fa';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
-// Define types for the response from the API
-interface Sharing {
-  success: boolean;
+interface SharingDetails {
+  _id: string;
   fullName: string;
   email: string;
-  imageUrls: string[];
-  typeofservices: string;
   description: string;
+  typeofservices: string;
+  imageUrls: string[];
+  userRef: string;
   createdAt: string;
+  updatedAt: string;
 }
 
-
-export default function Detailspages() {
-  SwiperCore.use([Navigation]);
-  const params = useParams<{ sharingId: string }>();
-  
-  const [sharing, setSharing] = useState<Sharing | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<boolean>(false);
-  const [copied, setCopied] = useState<boolean>(false);
+const Detailspages: React.FC = () => {
+  const { sharingId } = useParams<{ sharingId: string }>();
+  const [details, setDetails] = useState<SharingDetails | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchSharing = async () => {
+    const fetchDetails = async () => {
       try {
-        setLoading(true);
-        const res = await fetch(
-          `http://localhost:8000/apis/aply/getbyid/${params.sharingId}`
-        );
-        const data: Sharing = await res.json();
-        if (data.success === false) {
-          setError(true);
-          setLoading(false);
-          return;
+        const response = await axios.get(`http://localhost:8000/apis/aply/getbyid/${sharingId}`);
+        if (response.data.success) {
+          setDetails(response.data.data);
+        } else {
+          setError(response.data.message || 'Failed to fetch details.');
         }
-        setSharing(data);
-        setLoading(false);
-        setError(false);
-      } catch (error) {
-        setError(true);
+      } catch (err: any) {
+        setError(err.message || 'An unexpected error occurred.');
+      } finally {
         setLoading(false);
       }
     };
-    if (params.sharingId) {
-      fetchSharing();
-    }
-  }, [params.sharingId]);
 
-  const getMycopid = () => {
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(window.location.href);
-      setCopied(true);
-      setTimeout(() => {
-        setCopied(false);
-      }, 2000);
-    }
-  };
+    fetchDetails();
+  }, [sharingId]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen text-lg text-gray-500">
+        Loading...
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center min-h-screen text-lg text-red-500">
+        Error: {error}
+      </div>
+    );
+  }
+
+  if (!details) {
+    return (
+      <div className="flex items-center justify-center min-h-screen text-lg text-gray-500">
+        No details available.
+      </div>
+    );
+  }
 
   return (
-    <main className="">
-      {loading && (
-        <h1 className="LoadingpageContainer">
-          <Load />
-        </h1>
-      )}
-      {error && (
-        <h1 className="LoadingpageContainer">
-          <Messagebugs />
-        </h1>
-      )}
-
-      {sharing && !loading && !error && (
-        <div>
-          <Swiper navigation>
-            {sharing.imageUrls.map((imagurl, index) => (
-              <SwiperSlide key={index}>
-                <div
-                  className="h-[550px] relative object-cover"
-                  style={{
-                    background: `linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url(${imagurl}) center no-repeat`,
-                    backgroundSize: "cover",
-                  }}
-                >
-                  <div className="text-white text-4xl absolute bottom-10 right-0 left-0 px-5 font-bold">
-                    <h1>{sharing.fullName}</h1>
-                    <h3 className="text-xs text-gray-500">{sharing.email}</h3>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          {/* Links sharing */}
-          <div className="flex items-center justify-center fixed top-[13%] right-[3%] z-10 tex gap-6">
-            <div className="flex items-center ">
-              <h1 className="text-white">{sharing.fullName}</h1>
-            </div>
-
-            <div className="w-12 h-12 flex justify-center items-center bg-slate-100 cursor-pointer hover:rounded-full">
-              <FaShare className="text-base" onClick={getMycopid} />
-            </div>
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">Details Page</h1>
+      <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="flex flex-col md:flex-row items-center p-6 space-x-6">
+          <div className="flex-shrink-0">
+            <img 
+              src={details.imageUrls[0]} 
+              alt={details.fullName} 
+              className="w-40 h-40 rounded-full object-cover shadow-md"
+            />
           </div>
-          {copied && (
-            <p className="fixed top-[23%] right-[5%] z-10 rounded-xl bg-slate-100 p-2">
-              Success copied!
+          <div className="mt-4 md:mt-0">
+            <h2 className="text-2xl font-semibold text-gray-800">{details.fullName}</h2>
+            <p className="text-lg text-gray-600">{details.email}</p>
+            <p className="mt-4 text-gray-700">{details.description}</p>
+            <p className="mt-4 font-medium text-gray-800">
+              <span className="font-semibold">Type of Services:</span> {details.typeofservices}
             </p>
-          )}
-
-          <div className="flex flex-col max-w-6xl mx-auto p-3 my-7 gap-4">
-            <div className="flex items-center gap-5">
-              <div className="flex items-center gap-2 text-green-700">
-                <FaRegCalendarAlt />
-                <span className="text-slate-950 text-sm">
-                  {format(new Date(sharing.createdAt), 'dd/MM/yyyy')}
-                </span>
-              </div>
+            <div className="mt-4 text-sm text-gray-500">
+              <p><strong>Created At:</strong> {new Date(details.createdAt).toLocaleString()}</p>
+              <p><strong>Updated At:</strong> {new Date(details.updatedAt).toLocaleString()}</p>
             </div>
-            <div className="text-slate-700 font-light text-3xl">
-              <h1>{sharing.typeofservices}</h1>
-            </div>
-            <div className="text-slate-950 font-light text-xl">
-              <h1>{sharing.description}</h1>
-            </div>
-
-            {/* Adding condition rendering in the page */}
           </div>
         </div>
-      )}
-    </main>
+      </div>
+    </div>
   );
-}
+};
+
+export default Detailspages;
