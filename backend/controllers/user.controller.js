@@ -96,3 +96,11 @@ export const signin = async (req, res, next) => {
     next(error);
   }
 };
+
+
+const userController = {
+  signup,
+  signin,
+};
+
+export default userController;

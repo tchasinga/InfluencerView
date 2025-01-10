@@ -11,13 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-     "http://localhost:5173",
-      "http://localhost:3000",
-      "https://mydashboard-ui-frontend.onrender.com",
-      "https://devservice-six.vercel.app",
-       "*",
-    ],
+    origin: "http://localhost:5173",
     credentials: true,
     allowedHeaders: "*", // or list specific headers if needed
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"],

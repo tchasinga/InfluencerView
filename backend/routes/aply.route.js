@@ -5,7 +5,7 @@ const router = express.Router(); // Move this line up to initialize the router f
 
 router.post("/create", createSharing);
 router.get("/get", getSharing);
-router.get("/getbyid/:id", getAplyById);
+router.get("/getbyid/:id", getSharingById);
 
 
 export default router;
