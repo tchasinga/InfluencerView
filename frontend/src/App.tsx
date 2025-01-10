@@ -10,6 +10,7 @@ import Detailspages from './Components/Detailspages.tsx'
 import Header from './Components/Header.tsx'
 import Profile from './Components/Profile.tsx'
 import SingUp from './Components/SingUp.tsx'
+import Createpost from './Components/Createpost.tsx'
 
 
 
@@ -35,9 +36,11 @@ function App() {
           <Route path="/Mydetails/:id" element={<Detailspages />} />
           <Route path="*" element={<Navigate to="/" />} />
 
+
           <Route element={<PrivateRoom />} />
           <Route path="/Mydetails/:id" element={<Detailspages />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/createpost" element={<Createpost />} />
         </Routes>
       </BrowserRouter>
     </div>
