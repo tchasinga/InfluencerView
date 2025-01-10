@@ -18,6 +18,9 @@ const AplySchema = new mongoose.Schema({
         type: Array,
         trim: true,
     },
+    userRef: { 
+        type: String,
+      },
 }, {timestamps: true});
 
 const Aply = mongoose.model("Aply", AplySchema);
