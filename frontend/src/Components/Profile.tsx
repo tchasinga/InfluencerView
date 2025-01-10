@@ -48,10 +48,10 @@ export default function Profile() {
       </div>
       <div className="flex flex-col justify-center">
         <div className="text-2xl font-bold">
-          {currentUser?.username}
+          {currentUser?.user?.username}
         </div>
         <div className="text-xl text-slate-600 font-normal">
-          {currentUser?.email}
+          {currentUser?.user?.email}
         </div>
       </div>
       {/* adding a creating post */}
