@@ -18,7 +18,6 @@ export default function Profile() {
           <div className="flex flex-col justify-center cursor-pointer text-red-700">
             <h2>Sing out</h2>
           </div>
-
       </div>
       <div className="flex flex-col justify-center">
         <div className="text-2xl font-bold">
