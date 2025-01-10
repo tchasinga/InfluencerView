@@ -57,7 +57,7 @@ export default function SingUp() {
       }
 
       dispatch(signInSuccess(data));
-      navigate('/signup');
+      navigate('/signin');
       setShowSuccess(true);
       setShowError(false);
     } catch (error) {
