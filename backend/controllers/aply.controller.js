@@ -1,4 +1,6 @@
 import Aply from "../models/aply.model.js";
+
+
 // Create Sharing model in the database
 export const createSharing = async (req, res, next) => {
     try {
