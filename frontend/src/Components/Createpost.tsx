@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from "firebase/storage";
