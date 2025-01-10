@@ -56,7 +56,7 @@ export default function SignIn() {
       }
 
       dispatch(signInSuccess(data));
-      navigate('/dashboard');
+      navigate('/');
       setShowSuccess(true);
       setShowError(false);
     } catch (error) {

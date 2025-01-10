@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useSelector } from 'react-redux'
 import './App.css'
-import Dashboard from './Components/Dashboard.tsx'
 import Home from './Components/Home.tsx'
 import SignIn from './Components/SignIn.tsx'
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
@@ -30,8 +29,8 @@ function App() {
           {/* add singup route */}
           <Route path="/signup" element={<SingUp />} />
           <Route
-            path="/dashboard"
-            element={currentUser ? <Dashboard /> : <Navigate to="/signin" />}
+            path="/"
+            element={currentUser ? <Home /> : <Navigate to="/signin" />}
           />
           <Route path="/Mydetails/:sharingId" element={<Detailspages />} />
           <Route path="*" element={<Navigate to="/" />} />

@@ -121,7 +121,7 @@ export default function Createpost() {
 
       if (data.success) {
         setOpenSnackbar(true);
-        navigate("/dashboard");
+        navigate("/");
       } else {
         setError(data.message);
       }
