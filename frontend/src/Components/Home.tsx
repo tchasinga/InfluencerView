@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Load from "../Animations/Load";
 import Messagebugs from "../Animations/Messagebugs";
 import SharingCard from './SharingCard.tsx';
+import HeroSection from './HeroSection.tsx';
 
 export default function Home() {
   
@@ -48,10 +49,16 @@ export default function Home() {
 
   return (
     <>
-      {loading && <h1 className='LoadingpageContainer'><Load /></h1>}
-      {sharingError && <h1 className='LoadingpageContainer'><Messagebugs /></h1>}
 
-      <div className="flex flex-wrap gap-4 justify-center max-w-full myhomeget mx-auto">
+
+    <HeroSection />
+     
+     <div className="flex flex-col justify-center items-center">
+     {loading && <h1 className='LoadingpageContainer'><Load /></h1>}
+     {sharingError && <h1 className='LoadingpageContainer'><Messagebugs /></h1>}
+     </div>
+
+      <div className="flex flex-wrap gap-4 justify-center max-w-full myhomeget mx-auto my-[7%]">
         {sharing.length > 0 ? (
           sharing.map((sharinglist) => (
             <div className="" key={sharinglist._id}>
