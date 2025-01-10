@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react'
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export default function Profile() {
   const currentUser = useSelector(
@@ -27,6 +28,14 @@ export default function Profile() {
           {currentUser.user?.email}
         </div>
       </div>
+      {/* adding a creating post */}
+      <Link to="/createpost">
+      <div className="flex flex-col justify-start place-items-start py-4">
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Create Post
+        </button>
+      </div>
+      </Link>
     </div>
   )
 }
