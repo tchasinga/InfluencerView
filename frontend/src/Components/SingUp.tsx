@@ -57,7 +57,7 @@ export default function SingUp() {
       }
 
       dispatch(signInSuccess(data));
-      navigate('/dashboard');
+      navigate('/signup');
       setShowSuccess(true);
       setShowError(false);
     } catch (error) {
@@ -129,7 +129,7 @@ export default function SingUp() {
             {loading ? (
               <CircularProgress size={24} />
             ) : (
-              'Sign In'
+              'Sign Up'
             )}
           </Button>
         </Box>
@@ -140,7 +140,7 @@ export default function SingUp() {
           <Alert severity="error">Please check your credentials.</Alert>
         )}
         <Typography variant="body2" color="text.secondary">
-          Don't have an account? <Link to="/signup">Sign up</Link>
+          Already have an account? <Link to="/signin" >Sign in</Link>
         </Typography>
       </Box>
     </Container>
