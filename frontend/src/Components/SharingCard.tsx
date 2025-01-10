@@ -23,7 +23,7 @@ export default function SharingCard({ sharinglist }: SharingCardProps) {
         <img src={sharinglist.imageUrls[0]} className="h-[250px] w-full relative object-cover rounded-2xl" alt="" />
         <div className="absolute text-white font-semibold bottom-0 right-0 left-0 px-5 text-sm bg-slate-300 p-2">
           <h1>{sharinglist.fullName}</h1>
-          <h3 className={`text-xs font-normal text-gray-300`}>{sharinglist.email}</h3>
+          <h3 className={`text-xs font-normal text-gray-900`}>{sharinglist.email}</h3>
         </div>
       </div>
     </Link>
