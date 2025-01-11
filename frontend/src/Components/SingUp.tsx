@@ -77,7 +77,7 @@ export default function SingUp() {
         }}
       >
         <Typography component="h1" variant="h5">
-          Sign in as admin
+          Sign Up now
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
 
