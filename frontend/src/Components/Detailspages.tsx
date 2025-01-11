@@ -41,7 +41,7 @@ const Detailspages: React.FC = () => {
   }, [sharingId]);
 
   if (loading) {
-    return <div className="loading">Loading...</div>;
+    return <div className="loading flex justify-center items-center">Loading...</div>;
   }
 
   if (error) {

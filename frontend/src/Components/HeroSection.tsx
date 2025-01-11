@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { useSelector } from 'react-redux';
+import Img from "../Components/2p5567.webp"
 
 const HeroSection = () => {
 
@@ -84,7 +85,7 @@ const HeroSection = () => {
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img
           className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src="../../src/Components/2p5567.webp"
+          src={Img}
           alt="Hero Image"
         />
       </div>
