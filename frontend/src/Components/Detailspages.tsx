@@ -41,7 +41,7 @@ const Detailspages: React.FC = () => {
   }, [sharingId]);
 
   if (loading) {
-    return <div className="loading flex justify-center items-center">Loading...</div>;
+    return <div className="loading flex justify-center items-center mt-10">Loading...</div>;
   }
 
   if (error) {
@@ -49,7 +49,7 @@ const Detailspages: React.FC = () => {
   }
 
   if (!details) {
-    return <div className="no-data">No details available.</div>;
+    return <div className="no-data">No details available. kindly wait</div>;
   }
 
   return (
