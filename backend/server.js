@@ -13,7 +13,7 @@ app.use(
   cors({
     origin: ["http://localhost:5173","https://influencerview-1.onrender.com"],
     credentials: true,
-    allowedHeaders: "*", // or list specific headers if needed
+    allowedHeaders: "*", 
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"],
   })
 );
