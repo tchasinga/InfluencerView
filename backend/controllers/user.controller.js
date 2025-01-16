@@ -22,6 +22,21 @@ export const signup = async (req, res, next) => {
       password: hashedPassword,
     });
 
+    if(!username || !email || !password){
+      res.status(400).json({
+        success: false,
+        message: "Please fill in all fields.",
+      });
+    }
+
+    // Check if the email already exists
+    if (await User.findOne({ email })) {
+      res.status(400).json({
+        success: false,
+        message: "User with this email already exists in the database...",
+      });
+    }
+
     const result = await newUser.save();
 
     // Generate a JWT token for user authentication
