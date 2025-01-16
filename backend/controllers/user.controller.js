@@ -88,6 +88,8 @@ export const signin = async (req, res, next) => {
       return next(error);
     }
 
+    
+
     // if all is good, user signed in successfully
     const token = jwt.sign({ id: validUser._id }, process.env.JWT_SECRET, {
       expiresIn: "1d",
