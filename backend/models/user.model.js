@@ -29,6 +29,6 @@ const userSchema = new mongoose.Schema(
   }
 );
 
+// Adding new comment now for user database
 const User = mongoose.model('User', userSchema);
-
 export default User;
